@@ -55,7 +55,7 @@ module.exports = {
 
         // disallow importing from the same path more than once
         // http://eslint.org/docs/rules/no-duplicate-imports
-        'no-duplicate-imports': 'off',
+        'no-duplicate-imports': 'error',
 
         // disallow symbol constructor
         // http://eslint.org/docs/rules/no-new-symbol
