@@ -1,0 +1,16 @@
+{
+  "name": "optimax-javascript",
+  "version": "1.0.0",
+  "description": "Optimax JavaScript Style Guide",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DonRai/javascript"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "style guide",
+    "lint"
+  ],
+  "main": "index.js"
+}
