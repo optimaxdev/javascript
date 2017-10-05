@@ -1,7 +1,20 @@
 module.exports = {
     rules: {
-        // require trailing commas in multiline object literals
-        'comma-dangle': ['error', 'always-multiline'],
+        // Enforce “for” loop update clause moving the counter in the right direction
+        // http://eslint.org/docs/rules/for-direction
+        'for-direction': 'error',
+
+        // Enforces that a return statement is present in property getters
+        // http://eslint.org/docs/rules/getter-return
+        'getter-return': ['error', { allowImplicit: true }],
+
+        // Disallow await inside of loops
+        // http://eslint.org/docs/rules/no-await-in-loop
+        'no-await-in-loop': 'error',
+
+        // Disallow comparisons to negative zero
+        // http://eslint.org/docs/rules/no-compare-neg-zero
+        'no-compare-neg-zero': 'error',
 
         // disallow assignment in conditional expressions
         'no-cond-assign': ['error', 'always'],
@@ -46,6 +59,8 @@ module.exports = {
             conditionalAssign: true,
             nestedBinaryExpressions: false,
             returnAssign: false,
+            ignoreJSX: 'all', // delegate to eslint-plugin-react
+            enforceForArrowConditionals: false,
         }],
 
         // disallow unnecessary semicolons

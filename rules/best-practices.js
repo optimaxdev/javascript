@@ -141,11 +141,10 @@ module.exports = {
             detectObjects: false,
         }],
 
-        // disallow use of multiple spaces
-        'no-multi-spaces': 'error',
-
         // disallow use of multiline strings
-        'no-multi-str': 'error',
+        'no-multi-spaces': ['error', {
+            ignoreEOLComments: false,
+        }],
 
         // disallow use of new operator when not part of the assignment or comparison
         'no-new': 'error',
@@ -164,9 +163,21 @@ module.exports = {
         'no-octal-escape': 'error',
 
         // disallow reassignment of function parameters
-        // disallow parameter object manipulation
+        // disallow parameter object manipulation except for specific exclusions
         // rule: http://eslint.org/docs/rules/no-param-reassign.html
-        'no-param-reassign': ['error', { props: true }],
+        'no-param-reassign': ['error', {
+            props: true,
+            ignorePropertyModificationsFor: [
+                'acc', // for reduce accumulators
+                'e', // for e.returnvalue
+                'ctx', // for Koa routing
+                'req', // for Express requests
+                'request', // for Express requests
+                'res', // for Express responses
+                'response', // for Express responses
+                '$scope', // for Angular 1 scopes
+            ]
+        }],
 
         // disallow usage of __proto__ property
         'no-proto': 'error',
@@ -241,6 +252,10 @@ module.exports = {
 
         // disallow use of the with statement
         'no-with': 'error',
+
+        // require using Error objects as Promise rejection reasons
+        // http://eslint.org/docs/rules/prefer-promise-reject-errors
+        'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
 
         // require use of the second argument for parseInt()
         radix: 'error',
