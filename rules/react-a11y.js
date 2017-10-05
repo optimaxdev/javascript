@@ -9,7 +9,7 @@ module.exports = {
     rules: {
         // Enforce that anchors have content
         // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md
-        'jsx-a11y/anchor-has-content': ['error', { components: [] }],
+        'jsx-a11y/anchor-has-content': ['error', { components: [''] }],
 
         // Require ARIA roles to be valid and non-abstract
         // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md
