@@ -3,9 +3,6 @@ module.exports = {
         'jsx-a11y',
         'react'
     ],
-    ecmaFeatures: {
-        jsx: true
-    },
     rules: {
         // Enforce that anchors have content
         // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md
